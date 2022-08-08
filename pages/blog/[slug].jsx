@@ -1,11 +1,11 @@
 import Tag from "../../components/Tag";
 import {
-  IoLogoFacebook,
-  IoLogoTwitter,
-  IoLogoLinkedin,
-  IoLogoReddit,
-  IoLogoWhatsapp,
-} from "react-icons/io5";
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaReddit,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 import {
   FacebookShareButton,
@@ -61,19 +61,19 @@ const blogpost = ({ post, host }) => {
         <div className="flex items-center py-10">
           <span className="pr-5  font-medium ">Share</span>
           <WhatsappShareButton url={blogPostUrl}>
-            <IoLogoWhatsapp className="text-2xl  hover:text-primary transition-colors" />
+            <FaWhatsapp className="text-2xl  hover:text-primary transition-colors" />
           </WhatsappShareButton>
           <FacebookShareButton url={blogPostUrl}>
-            <IoLogoFacebook className="text-2xl ml-5  hover:text-primary transition-colors" />
+            <FaFacebook className="text-2xl ml-5  hover:text-primary transition-colors" />
           </FacebookShareButton>
           <TwitterShareButton url={blogPostUrl}>
-            <IoLogoTwitter className="text-2xl ml-5 hover:text-primary transition-colors" />
+            <FaTwitter className="text-2xl ml-5 hover:text-primary transition-colors" />
           </TwitterShareButton>
           <LinkedinShareButton url={blogPostUrl}>
-            <IoLogoLinkedin className="text-2xl ml-5 hover:text-primary transition-colors" />
+            <FaLinkedin className="text-2xl ml-5 hover:text-primary transition-colors" />
           </LinkedinShareButton>
           <RedditShareButton url={blogPostUrl}>
-            <IoLogoReddit className="text-2xl ml-5 hover:text-primary transition-colors" />
+            <FaReddit className="text-2xl ml-5 hover:text-primary transition-colors" />
           </RedditShareButton>
         </div>
       </div>

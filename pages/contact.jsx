@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { MdMailOutline } from "react-icons/md";
 import Button from "../components/Button";
 
 const contact = () => {
@@ -13,12 +14,7 @@ const contact = () => {
       </Head>
       <div className="py-16 lg:py-20">
         <div>
-          <img
-            src="/img/icon-contact.png"
-            width={48}
-            height={36}
-            alt="icon envelope"
-          />
+          <MdMailOutline className="text-5xl text-icon" />
         </div>
         <h1 className="pt-5 mb-4 text-4xl font-semibold   md:text-5xl lg:text-6xl">
           Contact

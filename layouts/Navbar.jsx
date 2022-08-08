@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { IoMoon, IoSunny } from "react-icons/io5";
+import { MdAllInclusive, MdDarkMode, MdLightMode } from "react-icons/md";
 
 const NavLink = ({ text, link }) => {
   return (
@@ -16,10 +16,8 @@ const Navbar = () => {
     <nav className="py-6 lg:py-10 flex justify-between items-center  flex-col sm:flex-row ">
       {/* logo  */}
       <Link href="/">
-        <a className="flex items-center mb-4 sm:mb-0 ">
-          <span className="mr-2">
-            <img src="/img/logo.svg" height={50} width={50} alt="logo" />
-          </span>
+        <a className="flex items-center text-primary  mb-4 sm:mb-0 ">
+          <MdAllInclusive className="mr-2 text-4xl" />
           <p className="hidden text-2xl font-bold  lg:block">Devocoe</p>
         </a>
       </Link>
@@ -38,10 +36,10 @@ const Navbar = () => {
             aria-label="dark mode toggle button"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
-            {theme === "light" ? (
-              <IoMoon size={24} className="ml-8" />
+            {theme === "dark" ? (
+              <MdLightMode size={24} className="ml-8" />
             ) : (
-              <IoSunny size={24} className="ml-8" />
+              <MdDarkMode size={24} className="ml-8" />
             )}
           </button>
         </li>

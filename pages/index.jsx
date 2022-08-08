@@ -5,6 +5,8 @@ import Project from "../components/Project";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { GraphQLClient } from "graphql-request";
+import { FaNewspaper, FaCodeBranch } from "react-icons/fa";
+import { MdArrowRightAlt, MdOutlinePortrait } from "react-icons/md";
 
 // hygraph
 const graphcms = new GraphQLClient(process.env.CMS_URL);
@@ -31,7 +33,7 @@ export default function Home({ latestPosts, projects }) {
             <img
               width={80}
               height={80}
-              src="/img/avatar.png"
+              src="/img/author.png"
               className="rounded-full"
               alt="author"
             />
@@ -57,12 +59,7 @@ export default function Home({ latestPosts, projects }) {
         {/* about section  */}
         <section id="about" className="border-b  py-16 lg:py-20">
           <div className="flex items-center pb-6">
-            <img
-              width={21}
-              height={29}
-              src="/img/icon-story.png"
-              alt="icon story"
-            />
+            <MdOutlinePortrait className="text-3xl text-icon" />
             <h2 className="ml-3  text-2xl font-semibold">My Story</h2>
           </div>
           <div>
@@ -90,23 +87,12 @@ export default function Home({ latestPosts, projects }) {
         {/* latest post section  */}
         <section className="py-16 lg:py-20">
           <div className="flex items-center pb-6">
-            <img
-              width={32}
-              height={21}
-              src="img/icon-post.png"
-              alt="icon blog"
-            />
+            <FaNewspaper className="text-3xl text-icon" />
             <h2 className="ml-3  text-2xl font-semibold ">Latest Blogs</h2>
             <Link href="/blog">
               <a className="flex items-center pl-10  italic transition-colors hover:text-primary">
                 All posts
-                <img
-                  width={16}
-                  height={10}
-                  src="/img/long-arrow-right.png"
-                  className="ml-3"
-                  alt="arrow right"
-                />
+                <MdArrowRightAlt className="text-xl ml-3 text-primary" />
               </a>
             </Link>
           </div>
@@ -121,12 +107,7 @@ export default function Home({ latestPosts, projects }) {
         {/* projects section  */}
         <section id="projects" className="pb-16 lg:pb-20">
           <div className="flex items-center pb-6">
-            <img
-              width={21}
-              height={29}
-              src="/img/icon-project.png"
-              alt="icon story"
-            />
+            <FaCodeBranch className="text-3xl text-icon" />
             <h2 className="ml-3 text-2xl font-semibold ">My Projects</h2>
           </div>
           <div>

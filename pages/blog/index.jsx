@@ -2,6 +2,7 @@ import Button from "../../components/Button";
 import Post from "../../components/Post";
 import { GraphQLClient } from "graphql-request";
 import Head from "next/head";
+import { FaNewspaper } from "react-icons/fa";
 
 // hygraph;
 const graphcms = new GraphQLClient(process.env.CMS_URL);
@@ -19,12 +20,7 @@ const blog = ({ posts }) => {
       </Head>
       <div className="py-16 lg:py-20">
         <div>
-          <img
-            width={54}
-            height={36}
-            src="/img/icon-blog.png"
-            alt="icon envelope"
-          />
+          <FaNewspaper className="text-5xl text-icon" />
         </div>
 
         <h2 className="pt-5 mb-4 text-4xl font-semibold   md:text-5xl lg:text-6xl">

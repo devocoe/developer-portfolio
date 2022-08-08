@@ -10,14 +10,14 @@ const Post = ({ data }) => {
       })}
       {/*  */}
       <Link href={`blog/${data.slug}`}>
-        <a className="block hover:opacity-90  transition-opacity">
+        <a className="block hover:opacity-80  transition-opacity">
           <h3 className="text-xl font-semibold  mb-2 ">{data.title}</h3>
           <p>{data.excerpt}</p>
         </a>
       </Link>
       <div className="flex text-sm items-center pt-4">
         <p className="pr-2 font-light ">{data.published}</p>
-        <span>//</span>
+        <span>|</span>
         <p className="pl-2 font-light">{data.time} min read</p>
       </div>
     </div>
