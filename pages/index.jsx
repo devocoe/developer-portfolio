@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Button from "../components/Button";
 import Post from "../components/Post";
 import Project from "../components/Project";
@@ -30,16 +31,16 @@ export default function Home({ latestPosts, projects }) {
         {/* hero section  */}
         <section id="intro" className="border-b  py-16 lg:py-20">
           <div>
-            <img
+            <Image
+              src={"/img/author.png"}
               width={80}
               height={80}
-              src="/img/author.png"
-              className="rounded-full"
               alt="author"
+              className="rounded-full"
             />
           </div>
           <h1 className="pt-3  text-4xl font-semibold  md:text-5xl lg:text-6xl">
-            Hi, I'm Piyush.
+            Hi, I&apos;m Piyush.
           </h1>
           <p className="pt-3 mb-12  text-xl  ">
             A passionate programmer and also a high school student. Love

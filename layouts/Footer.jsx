@@ -20,6 +20,7 @@ const Footer = () => {
               aria-label="github"
               href="https://github.com/piyush816"
               target="_blank"
+              rel="noreferrer"
             >
               <FaGithub className="text-2xl  hover:text-primary transition-colors" />
             </a>
@@ -29,6 +30,7 @@ const Footer = () => {
               className="ml-8"
               href="https://www.linkedin.com/in/piyush-kumar-a1b422240/"
               target="_blank"
+              rel="noreferrer"
             >
               <FaLinkedin className="text-2xl  hover:text-primary transition-colors" />
             </a>
@@ -38,6 +40,7 @@ const Footer = () => {
               className="ml-8"
               href="https://www.instagram.com/piyus_kmr/"
               target="_blank"
+              rel="noreferrer"
             >
               <FaInstagram className="text-2xl  hover:text-primary transition-colors" />
             </a>

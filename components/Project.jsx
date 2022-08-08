@@ -3,7 +3,8 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 const Project = ({ data }) => {
   return (
     <a
-      target={"_blank"}
+      target="_blank"
+      rel="noreferrer"
       href={data.link}
       className="mb-6 rounded flex items-center justify-between border  px-4 py-4 sm:px-6"
     >

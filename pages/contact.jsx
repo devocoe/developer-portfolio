@@ -21,7 +21,7 @@ const contact = () => {
         </h1>
         <div className="pr-2 pt-3 sm:pt-0">
           <p className=" text-xl   ">
-            Let's connect, share ideas and work together.
+            Let&apos;s connect, share ideas and work together.
           </p>
         </div>
         <form
