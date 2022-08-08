@@ -2,6 +2,7 @@ import Footer from "../layouts/Footer";
 import Navbar from "../layouts/Navbar";
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
+import NextNProgress from "nextjs-progressbar";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }) {
       <div className="dark:bg-secondary bg-white dark:text-white text-secondary">
         <div className="container">
           <Navbar />
+          <NextNProgress height={4} color="#6C63FF" />
           <Component {...pageProps} />
           <Footer />
         </div>
