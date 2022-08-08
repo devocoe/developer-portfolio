@@ -153,6 +153,7 @@ export async function getStaticProps() {
         latestPosts: posts,
         projects,
       },
+      revalidate: 60,
     };
   } catch (error) {
     console.log(error.message);
