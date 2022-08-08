@@ -80,6 +80,7 @@ export async function getStaticProps() {
       props: {
         posts,
       },
+      revalidate: 60,
     };
   } catch (error) {
     console.log(error.message);
