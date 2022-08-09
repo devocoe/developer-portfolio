@@ -1,6 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
-import { MdAllInclusive } from "react-icons/md";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
           {/* logo  */}
           <div className="sm:mr-auto flex flex-col items-center sm:flex-row ">
             <Link href="/" className="mr-auto sm:mr-6">
-              <MdAllInclusive className="mr-2 text-primary text-4xl" />
+              <Image src={"/img/logo.svg"} alt="logo" width={45} height={45} />
             </Link>
             <p className="pt-5  font-light ml-2 sm:pt-0">©2022 devocoe.in</p>
           </div>

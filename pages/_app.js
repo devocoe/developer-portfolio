@@ -10,7 +10,11 @@ function MyApp({ Component, pageProps }) {
       <div className="dark:bg-secondary bg-white dark:text-white text-secondary">
         <div className="container">
           <Navbar />
-          <NextNProgress height={4} color="#6C63FF" />
+          <NextNProgress
+            height={4}
+            color="#6C63FF"
+            options={{ showSpinner: false }}
+          />
           <Component {...pageProps} />
           <Footer />
         </div>
