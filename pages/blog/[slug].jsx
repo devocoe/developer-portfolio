@@ -96,7 +96,7 @@ export async function getStaticPaths() {
       params: { slug: post.slug },
     }));
 
-    return { paths, fallback: true };
+    return { paths, fallback: "blocking" };
   } catch (error) {
     console.log(error.message);
   }
