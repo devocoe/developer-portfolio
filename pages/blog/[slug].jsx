@@ -19,14 +19,12 @@ import { GraphQLClient } from "graphql-request";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-const graphcms = new GraphQLClient(process.env.CMS_URL);
-
-const BlogPost = ({ post, host }) => {
+const BlogPost = ({ post }) => {
   const router = useRouter();
 
   const currentPath = router.asPath;
 
-  const blogPostUrl = `https://${host}${currentPath}`;
+  const blogPostUrl = `https://devocoe.in${currentPath}`;
 
   return (
     <main>
@@ -79,23 +77,14 @@ const BlogPost = ({ post, host }) => {
 
 export default BlogPost;
 
-export const getServerSideProps = async (context) => {
-  const {
-    query: { slug },
-  } = context;
-
-  const host = context.req.headers.host;
+export async function getStaticPaths() {
+  const graphcms = new GraphQLClient(process.env.CMS_URL);
 
   try {
     const query = `
     {
-      posts(where: { slug: "${slug}" }){
-        title
-        published
-        body{html}
-        time
-        category
-        excerpt
+      posts{
+      slug
       }
     }
     
@@ -103,19 +92,42 @@ export const getServerSideProps = async (context) => {
 
     const { posts } = await graphcms.request(query);
 
-    if (posts.length <= 0) {
-      return {
-        notFound: true,
-      };
-    }
+    const paths = posts.map((post) => ({
+      params: { slug: post.slug },
+    }));
+
+    return { paths, fallback: false };
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+export async function getStaticProps({ params: { slug } }) {
+  // hygraph
+  const graphcms = new GraphQLClient(process.env.CMS_URL);
+
+  try {
+    const query = `
+      {
+        posts(where: { slug: "${slug}" }){
+          title
+          published
+          body{html}
+          time
+          category
+          excerpt
+        }
+      }`;
+
+    const { posts } = await graphcms.request(query);
 
     return {
       props: {
         post: posts[0],
-        host,
       },
+      revalidate: 10,
     };
   } catch (error) {
     console.log(error.message);
   }
-};
+}

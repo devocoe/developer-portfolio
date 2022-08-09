@@ -9,9 +9,6 @@ import { GraphQLClient } from "graphql-request";
 import { FaNewspaper, FaCodeBranch } from "react-icons/fa";
 import { MdArrowRightAlt, MdOutlinePortrait } from "react-icons/md";
 
-// hygraph
-const graphcms = new GraphQLClient(process.env.CMS_URL);
-
 export default function Home({ latestPosts, projects }) {
   const router = useRouter();
 
@@ -125,10 +122,13 @@ export default function Home({ latestPosts, projects }) {
 
 // getting data
 export async function getStaticProps() {
+  // hygraph
+  const graphcms = new GraphQLClient(process.env.CMS_URL);
+
   try {
     const query = `
       query {
-        posts(first:4) {
+        posts(first:4,orderBy: createdAt_DESC) {
           title
           slug
           id
@@ -153,7 +153,7 @@ export async function getStaticProps() {
         latestPosts: posts,
         projects,
       },
-      revalidate: 60,
+      revalidate: 10,
     };
   } catch (error) {
     console.log(error.message);

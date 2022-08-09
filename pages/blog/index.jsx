@@ -62,7 +62,7 @@ export async function getStaticProps() {
   try {
     const query = `
       query {
-        posts {
+        posts(orderBy: createdAt_DESC) {
           title
           slug
           id
@@ -80,7 +80,7 @@ export async function getStaticProps() {
       props: {
         posts,
       },
-      revalidate: 60,
+      revalidate: 10,
     };
   } catch (error) {
     console.log(error.message);
